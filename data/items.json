@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "red-car",
+    "title": "Red Car",
+    "description": "A fast red sports car with stunning performance.",
+    "image": "/images/red-car.jpg"
+  },
+  {
+    "slug": "blue-bike",
+    "title": "Blue Bike",
+    "description": "A lightweight blue bike built for speed and comfort.",
+    "image": "/images/blue-bike.jpg"
+  },
+  {
+    "slug": "green-boat",
+    "title": "Green Boat",
+    "description": "A beautiful green boat designed for smooth sailing.",
+    "image": "/images/green-boat.jpg"
+  }
+]
