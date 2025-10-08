@@ -27,6 +27,11 @@ app.get('/contact', (req, res) => res.render('pages/contact', { title: 'Contact'
 app.use((req, res) => {
   res.status(404).render('pages/home', { title: 'Not Found' });
 });
+// 500 - Internal Server Error
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render('pages/error', { title: 'Server Error' });
+});
 
 // Start server
 const PORT = process.env.PORT || 3000;
