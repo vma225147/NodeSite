@@ -1,0 +1,14 @@
+<%- include('../layout', { body: `
+  <h1>Our Collection</h1>
+  <div class="items">
+    ${items.map(item => `
+      <div class="item">
+        <a href="/items/${item.slug}">
+          <img src="${item.image}" alt="${item.title}">
+          <h2>${item.title}</h2>
+        </a>
+        <p>${item.description}</p>
+      </div>
+    `).join('')}
+  </div>
+` }) %>
