@@ -1,20 +1,22 @@
-[
-  {
-    "slug": "red-car",
-    "title": "Red Car",
-    "description": "A fast red sports car with stunning performance.",
-    "image": "/images/red-car.jpg"
-  },
-  {
-    "slug": "blue-bike",
-    "title": "Blue Bike",
-    "description": "A lightweight blue bike built for speed and comfort.",
-    "image": "/images/blue-bike.jpg"
-  },
-  {
-    "slug": "green-boat",
-    "title": "Green Boat",
-    "description": "A beautiful green boat designed for smooth sailing.",
-    "image": "/images/green-boat.jpg"
-  }
-]
+<%- include('partials/header') %>
+
+<main class="container">
+  <h1><%= item.title %></h1>
+
+  <div class="item-detail">
+    <% if (item.image) { %>
+      <img src="<%= item.image %>" alt="<%= item.title %>" class="item-image">
+    <% } %>
+
+    <p><strong>Description:</strong> <%= item.description %></p>
+
+    <% if (item.price) { %>
+      <p><strong>Price:</strong> $<%= item.price %></p>
+    <% } %>
+
+    <a href="/collection" class="btn">Back to Collection</a>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
+
