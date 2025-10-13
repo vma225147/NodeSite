@@ -8,6 +8,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
+const expressLayouts = require('express-ejs-layouts');
+app.use(expressLayouts);
+app.set('layout', 'layout'); // This uses views/layout.ejs
+
 // Load data
 const items = JSON.parse(fs.readFileSync('./data/items.json', 'utf8'));
 
@@ -44,13 +48,14 @@ app.post('/contact', (req, res) => {
 
 // 404 handler
 app.use((req, res) => {
-  res.status(404).render('error', { title: '404 - Page Not Found' });
+  res.status(404).render('pages/error', { title: 'Not Found' });
+
 });
 
 // 500 handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).render('error', { title: '500 - Server Error' });
+  res.status(500).render('pages/error', { title: 'Server Error' });
 });
 
 app.listen(3000, () => console.log('Server running at http://localhost:3000'));
