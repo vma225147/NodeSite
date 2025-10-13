@@ -4,14 +4,14 @@
     "name": "Arizona Green Tea",
     "description": "Classic green tea with ginseng and honey.",
     "category": "Tea",
-    "image": "/images/green-tea.jpg"
+    "image": "/images/greentea.jpg"
   },
   {
     "slug": "fruit-punch",
     "name": "Arizona Fruit Punch",
     "description": "A sweet blend of natural fruit juices for ultimate refreshment.",
     "category": "Juice",
-    "image": "/images/fruit-punch.jpg"
+    "image": "/images/fruitpunch.jpg"
   },
   {
     "slug": "watermelon",
