@@ -1,20 +1,23 @@
 [
   {
-    "slug": "red-car",
-    "title": "Red Car",
-    "description": "A fast red sports car with stunning performance.",
-    "image": "/images/red-car.jpg"
+    "slug": "green-tea",
+    "name": "Arizona Green Tea",
+    "description": "Classic green tea with ginseng and honey.",
+    "category": "Tea",
+    "image": "/images/green-tea.jpg"
   },
   {
-    "slug": "blue-bike",
-    "title": "Blue Bike",
-    "description": "A lightweight blue bike built for speed and comfort.",
-    "image": "/images/blue-bike.jpg"
+    "slug": "fruit-punch",
+    "name": "Arizona Fruit Punch",
+    "description": "A sweet blend of natural fruit juices for ultimate refreshment.",
+    "category": "Juice",
+    "image": "/images/fruit-punch.jpg"
   },
   {
-    "slug": "green-boat",
-    "title": "Green Boat",
-    "description": "A beautiful green boat designed for smooth sailing.",
-    "image": "/images/green-boat.jpg"
+    "slug": "watermelon",
+    "name": "Arizona Watermelon",
+    "description": "Refreshing watermelon flavor that tastes like summer.",
+    "category": "Juice",
+    "image": "/images/watermelon.jpg"
   }
 ]

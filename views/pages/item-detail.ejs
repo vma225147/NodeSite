@@ -1,6 +1,6 @@
-<%- include('../layout', { body: `
-  <h1>${item.title}</h1>
-  <img src="${item.image}" alt="${item.title}" class="item-image">
-  <p>${item.description}</p>
-  <a href="/items">← Back to Collection</a>
-` }) %>
+<h1><%= item.name %></h1>
+<img src="<%= item.image %>" alt="<%= item.name %>">
+<p><%= item.description %></p>
+<p><strong>Category:</strong> <%= item.category %></p>
+<a href="/items" class="btn">Back to All Drinks</a>
+

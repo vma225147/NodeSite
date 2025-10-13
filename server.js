@@ -1,85 +1,57 @@
-// Import dependencies
 const express = require('express');
-const path = require('path');
-
 const app = express();
+const path = require('path');
+const fs = require('fs');
 
-// Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
-// Middleware to serve static files (CSS, images, JS)
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Middleware to handle form submissions
 app.use(express.urlencoded({ extended: true }));
 
-// ====== ROUTES (your website pages) ======
-
-// Home
-app.get('/', (req, res) => {
-  res.render('pages/home', { title: 'Home' });
-});
-
-// About
-app.get('/about', (req, res) => {
-  res.render('pages/about', { title: 'About' });
-});
-
-// Services
-app.get('/services', (req, res) => {
-  res.render('pages/services', { title: 'Services' });
-});
-
-// Blog
-app.get('/blog', (req, res) => {
-  res.render('pages/blog', { title: 'Blog' });
-});
-
-// Contact (GET)
-app.get('/contact', (req, res) => {
-  res.render('pages/contact', { title: 'Contact', message: null });
-});
-
-// Contact (POST)
-app.post('/contact', (req, res) => {
-  const { name, email, message } = req.body;
-  console.log('New contact:', name, email, message);
-  res.render('pages/contact', { title: 'Contact', message: 'Thanks for reaching out!' });
-});
-// Load JSON data
-const fs = require('fs');
+// Load data
 const items = JSON.parse(fs.readFileSync('./data/items.json', 'utf8'));
 
-// Collection page (list of all items)
-app.get('/items', (req, res) => {
-  res.render('pages/items', { title: 'Collection', items });
+// Routes
+app.get('/', (req, res) => {
+  res.render('pages/home', { title: 'Home | Arizona Beverages' });
 });
 
-// Detail page (single item)
+app.get('/about', (req, res) => {
+  res.render('pages/about', { title: 'About | Arizona Beverages' });
+});
+
+app.get('/items', (req, res) => {
+  res.render('pages/items', { title: 'Our Beverages', items });
+});
+
 app.get('/items/:slug', (req, res) => {
   const item = items.find(i => i.slug === req.params.slug);
-  if (!item) {
-    return res.status(404).render('pages/error', { title: 'Item Not Found' });
+  if (item) {
+    res.render('pages/item-detail', { title: item.name, item });
+  } else {
+    res.status(404).render('error', { title: 'Not Found' });
   }
-  res.render('pages/item-detail', { title: item.title, item });
 });
 
+app.get('/contact', (req, res) => {
+  res.render('pages/contact', { title: 'Contact Us | Arizona Beverages' });
+});
 
-// ====== ERROR HANDLING ======
+app.post('/contact', (req, res) => {
+  console.log('Form data received:', req.body);
+  res.render('pages/contact', { title: 'Contact Us', message: 'Thank you for your message!' });
+});
 
-// 404 - Page Not Found
+// 404 handler
 app.use((req, res) => {
-  res.status(404).render('pages/error', { title: 'Not Found' });
+  res.status(404).render('error', { title: '404 - Page Not Found' });
 });
 
-// 500 - Server Error
+// 500 handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).render('pages/error', { title: 'Server Error' });
+  res.status(500).render('error', { title: '500 - Server Error' });
 });
 
-// ====== START SERVER ======
-const PORT = process.env.PORT || 3000; // You can change 3000 to 505 if you want
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+app.listen(3000, () => console.log('Server running at http://localhost:3000'));
 
