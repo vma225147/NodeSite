@@ -23,6 +23,15 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('pages/about', { title: 'About | Arizona Beverages' });
 });
+// NEW ROUTES
+app.get('/services', (req, res) => {
+  res.render('pages/services', { title: 'Our Services | Arizona Beverages' });
+});
+
+app.get('/blog', (req, res) => {
+  res.render('pages/blog', { title: 'Blog | Arizona Beverages' });
+});
+
 
 app.get('/items', (req, res) => {
   res.render('pages/items', { title: 'Our Beverages', items });
@@ -38,12 +47,12 @@ app.get('/items/:slug', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
-  res.render('pages/contact', { title: 'Contact Us | Arizona Beverages' });
+  res.render('pages/contact', { title: 'Contact Us | Arizona Beverages', message: null });
 });
 
 app.post('/contact', (req, res) => {
   console.log('Form data received:', req.body);
-  res.render('pages/contact', { title: 'Contact Us', message: 'Thank you for your message!' });
+  res.render('pages/contact', { title: 'Contact Us | Arizona Beverages', message: 'Thank you for your message!' });
 });
 
 // 404 handler
