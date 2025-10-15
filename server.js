@@ -47,12 +47,18 @@ app.get('/items/:slug', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
-  res.render('pages/contact', { title: 'Contact Us | Arizona Beverages', message: null });
+  res.render('pages/contact', { 
+    title: 'Contact Us | Arizona Beverages',
+    message: null 
+  });
 });
 
 app.post('/contact', (req, res) => {
   console.log('Form data received:', req.body);
-  res.render('pages/contact', { title: 'Contact Us | Arizona Beverages', message: 'Thank you for your message!' });
+  res.render('pages/contact', { 
+    title: 'Contact Us | Arizona Beverages',
+    message: 'Thank you for your message!' 
+  });
 });
 
 // 404 handler
