@@ -49,7 +49,6 @@ app.post('/contact', (req, res) => {
 // 404 handler
 app.use((req, res) => {
   res.status(404).render('pages/error', { title: 'Not Found' });
-
 });
 
 // 500 handler

@@ -1,9 +1,14 @@
-<%- include('../partials/head') %>
-
-
 <h1><%= item.name %></h1>
-<img src="<%= item.image %>" alt="<%= item.name %>">
-<p><%= item.description %></p>
-<p><strong>Category:</strong> <%= item.category %></p>
-<a href="/items" class="btn">Back to All Drinks</a>
+
+<div class="item-detail">
+  <% if (item.image) { %>
+    <img src="<%= item.image %>" alt="<%= item.name %>" class="item-image">
+  <% } %>
+
+  <p><strong>Description:</strong> <%= item.description %></p>
+
+  <p><strong>Category:</strong> <%= item.category %></p>
+
+  <a href="/items" class="btn">Back to Collection</a>
+</div>
 
