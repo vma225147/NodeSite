@@ -1,6 +1,28 @@
-<!DOCTYPE html> <html lang="en">   <head>     <%- include('partials/_head', { title }) %>   </head>   <body>     <header>       <%- include('partials/_nav') %>     </header>     <main class="container">       <%- body %>     </main>     <footer>       <%- include('partials/_footer') %>     </footer>   </body> </html>
-<script>
-  document.querySelector('.menu-toggle').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('show');
-  });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> | NodeSite</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header>
+      <%- include('partials/_nav') %>
+    </header>
+
+    <main class="container">
+      <%- body %>
+    </main>
+
+    <footer>
+      <%- include('partials/_footer') %>
+    </footer>
+
+    <script>
+      document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('show');
+      });
+    </script>
+  </body>
+</html>
