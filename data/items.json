@@ -25,5 +25,14 @@
     "image": "/images/watermelon.jpg",
     "price": 1.29,
     "location": "Sold in convenience stores, grocery chains, and online retailers."
+  },
+  {
+    "slug": "rizzler",
+    "name": "Rizzler Berry",
+    "description": "Refreshing watermelon flavor that tastes like summer.",
+    "category": "Juice",
+    "image": "/images/rizzler.jpg",
+    "price": 1.29,
+    "location": "Sold in convenience stores, grocery chains, and online retailers."
   }
 ]

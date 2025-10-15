@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
+  background-color: #6189c5;
 }
 
 /* --- Navbar Styles --- */
@@ -92,7 +93,7 @@ body {
 
 /* Product images */
 .product-card img {
-  max-width: 100%;
+  max-width: 180px;
   height: auto;
   border-radius: 6px;
 }
