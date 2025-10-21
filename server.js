@@ -54,12 +54,32 @@ app.get('/contact', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
-  console.log('Form data received:', req.body);
-  res.render('pages/contact', { 
-    title: 'Contact Us | Arizona Beverages',
-    message: 'Thank you for your message!' 
+  const { name, email, message } = req.body;
+
+  // Create the message entry
+  const entry = `
+Name: ${name}
+Email: ${email}
+Message: ${message}
+Date: ${new Date().toLocaleString()}
+-----------------------------
+`;
+
+  // Save it to data/messages.txt
+  fs.appendFile(path.join(__dirname, 'data', 'messages.txt'), entry, (err) => {
+    if (err) {
+      console.error('Error saving message:', err);
+      res.status(500).render('pages/error', { title: 'Server Error' });
+    } else {
+      console.log('Message saved!');
+      res.render('pages/contact', { 
+        title: 'Contact Us', 
+        message: '✅ Thank you! Your message has been saved.' 
+      });
+    }
   });
 });
+
 
 // 404 handler
 app.use((req, res) => {
