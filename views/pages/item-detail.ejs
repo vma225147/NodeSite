@@ -1,25 +1,28 @@
 <%- include('../partials/_head') %>
 
-<main class="container">
-  <h1><%= item.name %></h1>
+<main class="container item-detail">
+  <div class="item-wrapper">
+    <div class="item-image">
+      <img src="<%= item.image %>" alt="<%= item.name %>">
+    </div>
 
-  <div class="item-detail">
-    <% if (item.image) { %>
-      <img src="<%= item.image %>" alt="<%= item.name %>" class="item-image">
-    <% } %>
-
-    <p><strong>Description:</strong> <%= item.description %></p>
-
-    <% if (item.price) { %>
+    <div class="item-info">
+      <h1><%= item.name %></h1>
+      <p><strong>Description:</strong> <%= item.description %></p>
+      <p><strong>Category:</strong> <%= item.category %></p>
       <p><strong>Price:</strong> $<%= item.price.toFixed(2) %></p>
-    <% } %>
+      <p><strong>Available:</strong> <%= item.location %></p>
 
-    <% if (item.location) { %>
-      <p><strong>Where to Buy:</strong> <%= item.location %></p>
-    <% } %>
+      <% if (item.link) { %>
+        <a href="<%= item.link %>" target="_blank" class="btn">Buy Now</a>
+      <% } %>
 
-    <a href="/items" class="btn">Back to Collection</a>
+      <a href="/items" class="btn btn-secondary">Back to Collection</a>
+    </div>
   </div>
 </main>
+
+
+
 
 

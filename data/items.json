@@ -5,8 +5,9 @@
     "description": "Classic green tea with ginseng and honey.",
     "category": "Tea",
     "image": "/images/greentea.jpg",
-    "price": 1.29,
-    "location": "Available at major grocery stores and convenience shops nationwide."
+    "price": 0.88,
+    "location": "Available at major grocery stores and convenience shops nationwide.",
+    "link": "https://www.walmart.com/ip/Arizona-Green-Tea-with-Ginseng-Honey-22-fl-oz/15603565?classType=REGULAR&athbdg=L1200&from=/search"
   },
   {
     "slug": "fruit-punch",
@@ -15,7 +16,8 @@
     "category": "Juice",
     "image": "/images/fruitpunch.jpg",
     "price": 1.29,
-    "location": "Find it at Walmart, Target, and select gas stations."
+    "location": "Find it at Walmart, Target, and select gas stations.",
+    "link": "https://drinkarizona.com"
   },
   {
     "slug": "watermelon",
@@ -24,7 +26,8 @@
     "category": "Juice",
     "image": "/images/watermelon.jpg",
     "price": 1.29,
-    "location": "Sold in convenience stores, grocery chains, and online retailers."
+    "location": "Sold in convenience stores, grocery chains, and online retailers.",
+    "link": "https://drinkarizona.com"
   },
   {
     "slug": "rizzler",
@@ -33,6 +36,7 @@
     "category": "Juice",
     "image": "/images/rizzler.jpg",
     "price": 1.29,
-    "location": "Sold in convenience stores, grocery chains, and online retailers."
+    "location": "Sold in convenience stores, grocery chains, and online retailers.",
+    "link": "https://drinkarizona.com"
   }
 ]
